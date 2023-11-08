@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'Metropolis';
+  src: url('fonts/metropolis.thin.otf');
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  font-family: 'Metropolis', sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #ffffff;
+  padding: 10px 0;
+}
+
+header h1 {
+  margin: 50px;
+  padding: 0 25px;
+}
+
+header img {
+  height: 25vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+figure {
+  text-align: center;
+  flex: 1 0 auto;
+  margin: 0 10px;
+  width: calc(100% / 3 - 20px);
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#about p {
+  padding: 0 20%;
+  font-size: 1.2em;
+}
+
+.services a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+figcaption {
+  font-weight: bold;
+}
+
+footer {
+  background-color: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input, form textarea {
+  margin-top: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+form button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100px;
+  align-self: center;
+}
