@@ -66,8 +66,8 @@
     <section id="contact">
       <h2>Contact Us</h2>
 
-      <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d189.2540365355575!2d22.95026864869535!3d40.62845764083103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a839ccd9ebf701%3A0xe0a530f3d322cb52!2sALEXANDER%20INNOVATION%20ZONE!5e0!3m2!1sen!2sgr!4v1699396164300!5m2!1sen!2sgr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div id="map-placeholder">
+        <div id="enable-map"></div>
       </div>
       <div class="contact">
         <div class="contact-info">
@@ -88,5 +88,14 @@
     <a class="policy" href="privacy-policy.html">Privacy Policy</a>
     <p>&copy; 2023 Marios Iakovidis Services</p>
   </footer>
+  <div id="cookie-banner" class="cookie-banner button-container">
+    <p>We use cookies and trackers to improve your experience.</p>
+    <p>Do you accept these cookies and the processing of personal data involved?</p>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <p></p>
+    <button id="accept-cookies" class="button">Yes</button>
+    <button id="decline-cookies" class="button">No</button>
+  </div>
+  <script src="js/main.js"></script>
 </body>
 </html>

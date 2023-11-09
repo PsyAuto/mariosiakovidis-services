@@ -181,3 +181,17 @@ footer {
   color: #fff;
   text-decoration: none;
 }
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #f9ed69;
+  padding: 20px;
+  border: 1px solid #888;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
