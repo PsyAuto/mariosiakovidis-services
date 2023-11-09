@@ -3,17 +3,17 @@ window.onload = function() {
     var acceptCookies = document.getElementById('accept-cookies');
     var declineCookies = document.getElementById('decline-cookies');
   
-    // Only show the banner if the user hasn't seen it before
-    if (!localStorage.getItem('cookieBannerDisplayed')) {
-      cookieBanner.style.display = 'block';
+    function getCookie(name) {
+      var cookies = document.cookie.split('; ');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].split('=');
+        if (cookie[0] === name) return cookie[1];
+      }
+      return null;
     }
   
-    // When the user accepts cookies, hide the banner and remember their choice
-    acceptCookies.addEventListener('click', function() {
-      cookieBanner.style.display = 'none';
-      localStorage.setItem('cookieBannerDisplayed', 'true');
-  
-      // Enable Google Maps
+    // Function to enable Google Maps
+    function enableGoogleMaps() {
       var mapIframe = document.createElement('iframe');
       mapIframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d189.2540365355575!2d22.95026864869535!3d40.62845764083103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a839ccd9ebf701%3A0xe0a530f3d322cb52!2sALEXANDER%20INNOVATION%20ZONE!5e0!3m2!1sen!2sgr!4v1699396164300!5m2!1sen!2sgr';
       mapIframe.width = '100%';
@@ -23,11 +23,35 @@ window.onload = function() {
       mapIframe.loading = 'lazy';
       mapIframe.referrerPolicy = 'no-referrer-when-downgrade';
       document.getElementById('map-placeholder').appendChild(mapIframe);
+    }
+  
+    // Only show the banner if the user hasn't seen it before
+    var cookieBannerDisplayed = getCookie('cookieBannerDisplayed');
+    console.log('cookieBannerDisplayed:', cookieBannerDisplayed);
+    if (!cookieBannerDisplayed) {
+      cookieBanner.style.display = 'block';
+    } else {
+      cookieBanner.style.display = 'none';
+      enableGoogleMaps(); // Enable Google Maps if the user has accepted cookies
+    }
+  
+    // When the user accepts cookies, hide the banner and remember their choice
+    acceptCookies.addEventListener('click', function() {
+      cookieBanner.style.display = 'none';
+      document.cookie = 'cookieBannerDisplayed=true; max-age=31536000'; // Set the cookie to expire in 1 year
+      enableGoogleMaps(); // Enable Google Maps
     });
   
     // When the user declines cookies, just hide the banner and remember their choice
     declineCookies.addEventListener('click', function() {
       cookieBanner.style.display = 'none';
-      localStorage.setItem('cookieBannerDisplayed', 'true');
+      document.cookie = 'cookieBannerDisplayed=true; max-age=31536000'; // Set the cookie to expire in 1 year
     });
   };
+
+var resetCookies = document.getElementById('reset-cookies');
+
+resetCookies.addEventListener('click', function() {
+  document.cookie = 'cookieBannerDisplayed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+  location.reload();
+});
