@@ -45,10 +45,9 @@ header .espa-img {
   z-index: 10; /* Ensure the header-container is above other elements */
 }
 
-/* Media query for mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .header-container {
-    height: 20vh;
+    height: 13vh;
   }
 }
 
@@ -60,6 +59,12 @@ header .espa-img {
 
 .header-top h1{
   margin: 3%;
+}
+
+@media (max-width: 500px) {
+  .header-top h1 {
+    font-size: 0.8em;
+  }
 }
 
 .company-logo {
@@ -80,8 +85,27 @@ header .espa-img {
   margin: 4%;
 }
 
-header li {
-  font-size: 1.8em;
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  margin-top: -1%;
+}
+
+nav ul li {
+  font-size: 1.7em;
+}
+
+@media (max-width: 500px) {
+  nav ul li {
+    font-size: 0.8em;
+  }
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 #services {
@@ -106,18 +130,6 @@ figure img {
   width: 100%;
   height: auto;
   object-fit: cover;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-}
-
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
 }
 
 main {
