@@ -24,6 +24,12 @@ window.onload = function() {
       mapIframe.referrerPolicy = 'no-referrer-when-downgrade';
       document.getElementById('map-placeholder').appendChild(mapIframe);
     }
+
+    // function to disable Google Maps
+    function disableGoogleMaps() {
+      var map = document.getElementById('map-placeholder');
+      map.style.display = 'none';
+    }
   
     // Only show the banner if the user hasn't seen it before
     var cookieBannerDisplayed = getCookie('cookieBannerDisplayed');
@@ -32,7 +38,9 @@ window.onload = function() {
       cookieBanner.style.display = 'block';
     } else {
       cookieBanner.style.display = 'none';
-      enableGoogleMaps(); // Enable Google Maps if the user has accepted cookies
+      if (cookieBannerDisplayed === 'true') {
+        enableGoogleMaps(); // Enable Google Maps if the user has accepted cookies
+      }
     }
   
     // When the user accepts cookies, hide the banner and remember their choice
