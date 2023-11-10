@@ -74,6 +74,10 @@ resetCookies.addEventListener('click', function() {
 
 window.onscroll = function() {
   var headerContainer = document.querySelector('.header-container');
+  var headerTop = document.querySelector('.header-top');
+  var companyLogo = document.querySelector('.company-logo');
+  var companyLogoLink = document.querySelector('.company-logo a');
+  var h1 = document.querySelector('.header-top h1');
   var services = document.querySelector('main');
   var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -81,8 +85,16 @@ window.onscroll = function() {
     headerContainer.style.position = 'fixed';
     headerContainer.style.top = '0';
     services.style.marginTop = headerContainer.offsetHeight + 'px';
+    companyLogo.style.justifyContent = 'center';
+    companyLogoLink.style.transform = 'translateX(-37%)';
+    h1.style.display = 'none';
+    headerTop.style.justifyContent = 'center';
   } else {
     headerContainer.style.position = 'static';
     services.style.marginTop = '0';
+    companyLogo.style.justifyContent = 'flex-end';
+    companyLogoLink.style.transform = 'translateX(0)';
+    h1.style.display = 'block';
+    headerTop.style.justifyContent = 'space-between';
   }
 };
