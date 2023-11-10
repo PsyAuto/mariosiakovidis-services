@@ -39,7 +39,9 @@ window.onload = function() {
     } else {
       cookieBanner.style.display = 'none';
       if (cookieBannerDisplayed === 'true') {
-        enableGoogleMaps(); // Enable Google Maps if the user has accepted cookies
+        if (document.getElementById('google-maps')) {
+          enableGoogleMaps();
+        }
       }
     }
   
@@ -55,6 +57,12 @@ window.onload = function() {
       cookieBanner.style.display = 'none';
       document.cookie = 'cookieBannerDisplayed=false; max-age=2592000'; // Set the cookie to expire in 1 year
     });
+
+    var headerContainer = document.querySelector('.header-container');
+    var main = document.querySelector('main');
+  
+    var headerContainerHeight = headerContainer.offsetHeight;
+    main.style.marginTop = headerContainerHeight + 'px';
   };
 
 var resetCookies = document.getElementById('reset-cookies');
@@ -66,7 +74,7 @@ resetCookies.addEventListener('click', function() {
 
 window.onscroll = function() {
   var headerContainer = document.querySelector('.header-container');
-  var services = document.querySelector('#services');
+  var services = document.querySelector('main');
   var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
   if (scrollPosition > window.innerHeight / 2) {
