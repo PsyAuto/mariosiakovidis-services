@@ -39,7 +39,7 @@ window.onload = function() {
     } else {
       cookieBanner.style.display = 'none';
       if (cookieBannerDisplayed === 'true') {
-        if (document.getElementById('google-maps')) {
+        if (document.getElementById('map-placeholder')) {
           enableGoogleMaps();
         }
       }
