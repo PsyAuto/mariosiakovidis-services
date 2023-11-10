@@ -46,14 +46,14 @@ window.onload = function() {
     // When the user accepts cookies, hide the banner and remember their choice
     acceptCookies.addEventListener('click', function() {
       cookieBanner.style.display = 'none';
-      document.cookie = 'cookieBannerDisplayed=true; max-age=31536000'; // Set the cookie to expire in 1 year
+      document.cookie = 'cookieBannerDisplayed=true; max-age=2592000'; // Set the cookie to expire in 1 year
       enableGoogleMaps(); // Enable Google Maps
     });
   
     // When the user declines cookies, just hide the banner and remember their choice
     declineCookies.addEventListener('click', function() {
       cookieBanner.style.display = 'none';
-      document.cookie = 'cookieBannerDisplayed=true; max-age=31536000'; // Set the cookie to expire in 1 year
+      document.cookie = 'cookieBannerDisplayed=false; max-age=2592000'; // Set the cookie to expire in 1 year
     });
   };
 
@@ -63,3 +63,18 @@ resetCookies.addEventListener('click', function() {
   document.cookie = 'cookieBannerDisplayed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
   location.reload();
 });
+
+window.onscroll = function() {
+  var headerContainer = document.querySelector('.header-container');
+  var services = document.querySelector('#services');
+  var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollPosition > window.innerHeight / 2) {
+    headerContainer.style.position = 'fixed';
+    headerContainer.style.top = '0';
+    services.style.marginTop = headerContainer.offsetHeight + 'px';
+  } else {
+    headerContainer.style.position = 'static';
+    services.style.marginTop = '0';
+  }
+};
