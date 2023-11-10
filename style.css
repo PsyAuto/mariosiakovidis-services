@@ -45,6 +45,13 @@ header .espa-img {
   z-index: 10; /* Ensure the header-container is above other elements */
 }
 
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .header-container {
+    height: 20vh;
+  }
+}
+
 .header-top {
   display: flex;
   justify-content: space-between;
@@ -69,6 +76,7 @@ header .espa-img {
 
 .company-logo img {
   width: 15%;
+  height: auto;
   margin: 4%;
 }
 
