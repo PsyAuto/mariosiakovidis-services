@@ -103,3 +103,9 @@ window.onscroll = function() {
     headerTop.style.justifyContent = 'space-between';
   }
 };
+
+document.querySelector('.company-logo a').addEventListener('click', function(event) {
+  event.preventDefault();
+  var header = document.querySelector('#header');
+  header.scrollIntoView({ behavior: 'smooth' });
+});
