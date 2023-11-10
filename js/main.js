@@ -78,6 +78,7 @@ window.onscroll = function() {
   var companyLogo = document.querySelector('.company-logo');
   var companyLogoLink = document.querySelector('.company-logo a');
   var h1 = document.querySelector('.header-top h1');
+  var nav = document.querySelector('nav');
   var services = document.querySelector('main');
   var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -88,6 +89,9 @@ window.onscroll = function() {
     companyLogo.style.justifyContent = 'center';
     companyLogoLink.style.transform = 'translateX(-37%)';
     h1.style.display = 'none';
+    if (window.innerWidth < 500) {
+       nav.style.display = 'none';
+    }
     headerTop.style.justifyContent = 'center';
   } else {
     headerContainer.style.position = 'static';
@@ -95,6 +99,7 @@ window.onscroll = function() {
     companyLogo.style.justifyContent = 'flex-end';
     companyLogoLink.style.transform = 'translateX(0)';
     h1.style.display = 'block';
+    nav.style.display = 'block';
     headerTop.style.justifyContent = 'space-between';
   }
 };
