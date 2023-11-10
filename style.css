@@ -85,6 +85,12 @@ header .espa-img {
   margin: 4%;
 }
 
+@media (max-width: 500px) {
+  .company-logo img {
+    margin: 6%;
+  }
+}
+
 nav ul {
   list-style-type: none;
   padding: 0;
