@@ -105,7 +105,16 @@ window.onscroll = function() {
 };
 
 document.querySelector('.company-logo a').addEventListener('click', function(event) {
-  event.preventDefault();
-  var header = document.querySelector('#header');
-  header.scrollIntoView({ behavior: 'smooth' });
+  var currentPage = window.location.pathname;
+  var logoLink = document.querySelector('.company-logo a');
+
+  if (currentPage.includes('privacy-policy-gr.html')) {
+    logoLink.href = 'index-gr.html';
+  } else if (currentPage.includes('privacy-policy.html')) {
+    logoLink.href = 'index.html';
+  } else {
+    event.preventDefault();
+    var header = document.querySelector('#header');
+    header.scrollIntoView({ behavior: 'smooth' });
+  }
 });
