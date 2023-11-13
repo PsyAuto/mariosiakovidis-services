@@ -31,6 +31,12 @@ header .espa-img {
   z-index: 100;
 }
 
+@media (max-width: 500px) {
+  .image-container {
+    height: 38vh;
+  }
+}
+
 .espa img {
   position: absolute;
   top: 50%;
@@ -48,6 +54,7 @@ header .espa-img {
 @media (max-width: 500px) {
   .header-container {
     height: 13vh;
+    top: 38vh;
   }
 }
 
