@@ -89,7 +89,7 @@ window.onscroll = function() {
     companyLogo.style.justifyContent = 'center';
     companyLogoLink.style.transform = 'translateX(-37%)';
     h1.style.display = 'none';
-    if (window.innerWidth < 500) {
+    if (window.innerWidth < 701) {
        nav.style.display = 'none';
     }
     headerTop.style.justifyContent = 'center';
